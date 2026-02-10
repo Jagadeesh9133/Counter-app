@@ -1,4 +1,5 @@
-import { Components } from "react";
+import { useState } from "react";
+
 function App() {
   const [count, setCount] = useState(0);
 
@@ -6,10 +7,12 @@ function App() {
     <div>
       <h1>Count {count}</h1>
       <div>
-        <button onClick={() => setCount(count + 1)}>Increment</button>
-        <button onClick={() => setCount(count - 1)}>decrement</button>
+        <button onClick={() => setCount((prev) => prev + 1)}>Increment</button>
+        <button onClick={() => setCount((prev) => prev - 1)}>Decrement</button>
         <button onClick={() => setCount(0)}>Reset</button>
       </div>
     </div>
   );
 }
+
+export default App;
